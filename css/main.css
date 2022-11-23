@@ -51,6 +51,14 @@ html, body {
   color: inherit;
   opacity: 0.8; }
 
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+
+
 .header-social .nav-link {
   font-size: 1.25rem; }
 
