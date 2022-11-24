@@ -11,7 +11,7 @@ window.onscroll = function () {
 };
 
 var navbar = document.querySelector("header");
-console.log(navbar);
+
 var sticky = navbar.offsetTop;
 
 function myFunction() {
@@ -21,3 +21,8 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+
+
+var navHeight = navbar.offsetHeight;
+document.documentElement.style.setProperty('--scroll-padding',navHeight + 1 + "px")
