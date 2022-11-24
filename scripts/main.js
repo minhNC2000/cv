@@ -25,4 +25,4 @@ function myFunction() {
 
 
 var navHeight = navbar.offsetHeight;
-document.documentElement.style.setProperty('--scroll-padding',navHeight + 1 + "px")
+document.documentElement.style.setProperty('--scroll-padding',navHeight + 5 + "px")
