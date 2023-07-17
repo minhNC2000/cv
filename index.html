@@ -83,6 +83,15 @@
         </div>
       </div>
     </header>
+    <button onclick="topFunction()" id="gotoTop" title="Go to top">
+      <lord-icon
+        src="https://cdn.lordicon.com/xdakhdsq.json"
+        trigger="hover"
+        colors="primary:#121331"
+        style="width: 64px; height: 64px"
+      >
+      </lord-icon>
+    </button>
     <div class="page-content">
       <div class="container">
         <div class="resume-container">
@@ -608,5 +617,32 @@
     <script src="scripts/mdb.min.js?ver=1.2.1"></script>
     <script src="scripts/aos.js?ver=1.2.1"></script>
     <script src="scripts/main.js?ver=1.2.1"></script>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <script>
+      // Get the button:
+      let mybutton = document.getElementById("gotoTop");
+
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    </script>
   </body>
 </html>
