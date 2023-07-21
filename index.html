@@ -43,10 +43,10 @@
     </noscript>
   </head>
   <body class="bg-light" id="top">
-    <header class="d-print-none">
+    <header id="header" class="d-print-none">
       <div class="container text-center text-lg-left">
         <div class="pt-4 clearfix">
-          <h1 class="site-title mb-0">Minh Nguyễn Inc.</h1>
+          <h1 class="site-title mb-0"><a href="/">Minh Nguyễn Inc.</a></h1>
           <div class="site-nav">
             <nav role="navigation">
               <ul class="nav justify-content-center">
@@ -621,15 +621,27 @@
     <script src="scripts/main.js?ver=1.2.1"></script>
     <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     <script>
-      // Get the button:
-      let mybutton = document.getElementById("gotoTop");
+      var mybutton = document.getElementById("gotoTop");
+      var header = document.getElementById("header");
+      var sticky = header.offsetTop;
+      var navigationHeight = header.offsetHeight;
 
-      // When the user scrolls down 20px from the top of the document, show the button
+      document.documentElement.style.setProperty(
+        "--scroll-padding",
+        navigationHeight + 20 + "px"
+      );
       window.onscroll = function () {
         scrollFunction();
+        stickyHeader();
       };
-
-      function scrollFunction() {
+      const stickyHeader = () => {
+        if (window.pageYOffset > sticky) {
+          header.classList.add("sticky");
+        } else {
+          header.classList.remove("sticky");
+        }
+      };
+      const scrollFunction = () => {
         if (
           document.body.scrollTop > 20 ||
           document.documentElement.scrollTop > 20
@@ -638,9 +650,8 @@
         } else {
           mybutton.style.display = "none";
         }
-      }
+      };
 
-      // When the user clicks on the button, scroll to the top of the document
       function topFunction() {
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
