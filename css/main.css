@@ -40,12 +40,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--scroll-padding,50px);
-}
-
-html,
-body {
-  overflow-x: hidden;
+  scroll-padding-top: var(--scroll-padding, 50px);
 }
 
 .container {
@@ -66,7 +61,7 @@ body {
 }
 
 .sticky {
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 9999;
